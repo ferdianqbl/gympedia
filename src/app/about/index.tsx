@@ -1,13 +1,18 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const About = () => {
+  const router = useRouter();
   return (
-    <View>
+    <SafeAreaView>
       <Text>About</Text>
-      <Link href="/">Home</Link>
-    </View>
+      {/* <Link href="/">Home</Link> */}
+      <TouchableOpacity onPress={() => router.push("/")}>
+        <Text>Home</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 
