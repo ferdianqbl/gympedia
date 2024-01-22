@@ -1,5 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Text, Image, View, TouchableOpacity } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
@@ -11,6 +12,7 @@ import {
 const Home = () => {
   return (
     <View className="flex justify-end flex-1">
+      <StatusBar style="light" />
       <Image
         source={require("@/assets/images/welcome.png")}
         className="absolute w-full h-full"
@@ -42,7 +44,7 @@ const Home = () => {
           >
             <Link
               href={"/home/"}
-              className="font-bold text-white"
+              className="w-full font-bold text-center text-white"
               style={{ fontSize: hp(3) }}
             >
               Get Started
