@@ -9,7 +9,14 @@ const Layout = () => {
         screenOptions={{
           headerShown: false,
         }}
-      />
+      >
+        {/* <Stack.Screen
+          name="exercises/index"
+          options={{
+            presentation: "fullScreenModal",
+          }}
+        /> */}
+      </Stack>
     </SafeAreaProvider>
   );
 };
