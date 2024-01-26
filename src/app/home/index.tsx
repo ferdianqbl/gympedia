@@ -9,6 +9,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import { FontAwesome } from "@expo/vector-icons";
 import ImageSlider from "@/components/image-slider";
+import BodyParts from "@/components/body-part";
 
 const Home = () => {
   const router = useRouter();
@@ -18,38 +19,41 @@ const Home = () => {
       //edges={["top"]}
     >
       <StatusBar style="dark" />
-      <ScrollView className="">
-        <View className="flex-1 gap-5">
-          <View className="flex-row items-center justify-between px-5">
-            <View>
-              <Text className="font-bold" style={{ fontSize: hp(4.5) }}>
-                READY TO
-              </Text>
-              <Text
-                className="font-bold text-rose-700"
-                style={{ fontSize: hp(4.5) }}
-              >
-                WORKOUT
-              </Text>
-            </View>
-
-            <View className="items-center gap-2">
-              <Image
-                source={require("@/assets/images/avatar.png")}
-                style={{ height: hp(6), width: hp(6) }}
-                className="rounded-full aspect-square"
-              />
-              <View className="flex items-center justify-center p-2 border rounded-full bg-neutral-200 border-neutral-300">
-                <FontAwesome name="bell-o" size={hp(2.5)} color="gray" />
-              </View>
-            </View>
+      {/* <ScrollView className=""> */}
+      <View className="flex-1 gap-5">
+        <View className="flex-row items-center justify-between px-5">
+          <View>
+            <Text className="font-bold" style={{ fontSize: hp(4.5) }}>
+              READY TO
+            </Text>
+            <Text
+              className="font-bold text-rose-700"
+              style={{ fontSize: hp(4.5) }}
+            >
+              WORKOUT
+            </Text>
           </View>
 
-          <View>
-            <ImageSlider />
+          <View className="items-center gap-2">
+            <Image
+              source={require("@/assets/images/avatar.png")}
+              style={{ height: hp(6), width: hp(6) }}
+              className="rounded-full aspect-square"
+            />
+            <View className="flex items-center justify-center p-2 border rounded-full bg-neutral-200 border-neutral-300">
+              <FontAwesome name="bell-o" size={hp(2.5)} color="gray" />
+            </View>
           </View>
         </View>
-      </ScrollView>
+
+        <View>
+          <ImageSlider />
+        </View>
+        <View className="flex-1">
+          <BodyParts />
+        </View>
+      </View>
+      {/* </ScrollView> */}
     </SafeAreaView>
   );
 };
